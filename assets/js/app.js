@@ -1,7 +1,7 @@
 const app = new Vue({
     el: '#app',
     data: {
-        newTask: 'Nuovo task',
+        newTask: '',
         tasks: [
             {
                 text: 'Preparare il pranzo',
@@ -9,7 +9,7 @@ const app = new Vue({
             },
             {
                 text: 'Mettere a posto il garage',
-                done: false
+                done: true
             },
             {
                 text: 'Finire l\'esercizio di Boolean',
@@ -24,12 +24,19 @@ const app = new Vue({
     methods: {
         addTask(){
             console.log(this.newTask);
-            this.tasks.push({text: this.newTask, done:false})
-            console.log(this.tasks);
-            this.newTask = 'Nuovo task'
+            if(this.newTask === ''){
+                alert('Non hai inserito un Task!')
+            }else{
+                this.tasks.push({text: this.newTask, done:false});
+            }
+            this.newTask = ''
         },
         removeTask(i){
             this.tasks.splice(i, 1)
+        },
+        completed(){
+            console.log('clicca completed');
+            this.tasks.done = true
         }
     }
 })
