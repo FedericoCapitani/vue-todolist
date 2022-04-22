@@ -34,9 +34,9 @@ const app = new Vue({
         removeTask(i){
             this.tasks.splice(i, 1)
         },
-        completed(){
+        completed(i){
             console.log('clicca completed');
-            this.tasks.done = true
+            this.tasks[i].done = !this.tasks[i].done
         }
     }
 })

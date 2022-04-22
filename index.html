@@ -21,7 +21,7 @@
             </div>
             <section>
                 <ul>
-                    <li v-for="(task, index) in tasks" v-bind:class="{task_done: task.done}" @click="completed">
+                    <li v-for="(task, index) in tasks" v-bind:class="{task_done: task.done}" @click="completed(index)">
                         {{task.text}} <i class="fa-solid fa-circle-xmark" @click="removeTask(index)"></i> 
                     </li>
                 </ul>
