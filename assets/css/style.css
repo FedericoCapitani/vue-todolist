@@ -22,10 +22,15 @@ body{
     font-size: 4rem;
 }
 
+.input, section{
+    width: 60%;
+    margin: 0 auto;
+}
 .input_area{
     padding: 10px 20px;
     border-radius: 10px;
     border: none;
+    width: 50%;
 }
 .btn{
     padding: 10px 20px;
@@ -33,8 +38,16 @@ body{
     border: none;
     color: black;
     background-color: violet;
+    width: 30%;
 }
 
 .task_done{
     text-decoration: line-through;
+}
+li{
+    margin: 10px 0;
+}
+
+i{
+    margin-left: 10px;
 }

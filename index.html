@@ -16,12 +16,12 @@
                 <h1>Todo List</h1>
             </div>
             <div class="input">
-                <input type="text" class="input_area" placeholder="Nuovo task">
-                <button class="btn">Aggiungi</button>
+                <input type="text" class="input_area" v-model="newTask">
+                <button class="btn" @click="addTask">Aggiungi</button>
             </div>
             <section>
                 <ul>
-                    <li v-for="(task, done) in tasks" :class="{'task_done' :!done, '' :done}"> {{task.text}} </li>
+                    <li v-for="(task, done) in tasks" :class="{'task_done' :!done, '' :done}"> {{task.text}} <i class="fa-solid fa-circle-xmark" @click="removeTask"></i> </li>
                 </ul>
             </section>
         </div>
